@@ -170,11 +170,11 @@ class NewtonEqFinderUp:
         return allEquilibria
 
 def getEquilibriumInfo(pt, rhsJac):
-   eigvals, eigvecs = LA.eig(rhsJac(pt))
-   vecs = []
-   for i in range(len(eigvals)):
-       vecs.append(eigvecs[:, i])
-   return Equilibrium(pt, eigvals, vecs)
+    eigvals, eigvecs = LA.eig(rhsJac(pt))
+    vecs = []
+    for i in range(len(eigvals)):
+        vecs.append(eigvecs[:, i])
+    return Equilibrium(pt, eigvals, vecs)
 
 def createEqList (allEquilibria, rhsJac):
     if len(allEquilibria) > 1:
